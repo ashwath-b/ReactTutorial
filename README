@@ -1,1 +1,54 @@
 React Tutorial by Akshay Saini
+
+Episode 1:
+  - hello world in HTML -> JS -> React (via cdn)
+  React createElement, ReactDOM createRoot -> returns react objects
+  render() processes these objects & returns html understandable by browser
+
+Episode 2: npm, React (npm), Parcel
+  - tree shaking
+  - local server
+  - dev build
+  - HMR (Hot Module Replacement)
+  - File Watching Algorithm
+  - Caching (faster builds)
+  - Image optimization
+  - Minification
+  - Bundling
+  - Compress
+  - consistent hashing
+  - code splitting
+  - Differentiate building (Support for older browsers)
+  - HTTPS server
+  - etc etc
+
+Episode 3:
+  - part 1: scripts to start dev server, build prod
+    npx parcel index.html = npm run start = npm start (start is reserved word)
+    npx parcel build index.html == npm run build != npm build
+  - part 2: render() function
+  - part 3:
+      - JSX (HTML like syntax, but not html in JS), different from React.
+      - return from createElement same as JSX statement
+      - Redo Episode 1 using JSX
+      - babel converts(transpiles) JSX code to React's create component
+  - part 4:
+    - React Element vs component
+    - React Components: ClassBased (old) & Functional Components (new)
+    - Function Components: Returns JSX
+    - Redo Episode 1 using React Component
+    - Component Composition (component inside component)
+  - part 5:
+    - JS inside JSX (JS Expressions)
+    - React Element inside React Element
+    - React Element inside React Component
+    - React Component inside React Component
+    - React Component inside React Element
+    - JSX handles XSS (Cross Site Scripting), by sanitizing the data passed to JSX, i.e. within {}
+    - ALl below are similar Inside JSX
+      const Title = () => (
+        <h1 id="heading">Hello world</h1>
+      )
+      - {Title()}
+      - <Title />
+      - <Title></Title>
