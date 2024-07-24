@@ -52,3 +52,7 @@ Episode 3:
       - {Title()}
       - <Title />
       - <Title></Title>
+
+Episode 4: Food delivery app
+  - part 1: Planning/Design wireframe, base implementation, All restaurants cards same
+  - part 2: ConfigDrivenUI, different Swiggy UI for Bengaluru, Delhi, Hyderabad etc (use map, key)
