@@ -68,3 +68,10 @@ Episode 5: Code restructuring
     - Properties:
       - Reconciliation Alg (React Fiber): concepts -> virtual DOM, Diff Alg
     - useState(): returns an arr (2), set to trigger ReactFiber on change
+
+Episode 6: UI interaction with other services (external world)
+  - part 1: Monolith VS Micro
+  - part 2: useEffect(), Use Swiggy API. render -> Load skeleton -> API call -> re-render
+  - part 3: Shimmer UI (change Loading to Empty cards)
+  - part 5: login <=> logout switching (useState)
+  - part 6: Search box
