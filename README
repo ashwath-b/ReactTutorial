@@ -56,3 +56,15 @@ Episode 3:
 Episode 4: Food delivery app
   - part 1: Planning/Design wireframe, base implementation, All restaurants cards same
   - part 2: ConfigDrivenUI, different Swiggy UI for Bengaluru, Delhi, Hyderabad etc (use map, key)
+
+Episode 5: Code restructuring
+  - part 1: Directory structure. js & jsx extension same. default & named export/import.
+  - part 2: Hooks
+    - Purpose of most of the UI frameworks is to keep UI & Data layer in sync.
+      i.e. update UI on data change.
+    - DOM -> HTML structure. (ex: <div><img /></div>)
+    - VirtualDom -> JS representation of actual DOM
+    - React -> Efficiently re-renders the DOMs. Good & efficient at DOM manipulation.
+    - Properties:
+      - Reconciliation Alg (React Fiber): concepts -> virtual DOM, Diff Alg
+    - useState(): returns an arr (2), set to trigger ReactFiber on change
