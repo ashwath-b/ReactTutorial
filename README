@@ -75,3 +75,13 @@ Episode 6: UI interaction with other services (external world)
   - part 3: Shimmer UI (change Loading to Empty cards)
   - part 5: login <=> logout switching (useState)
   - part 6: Search box
+
+Episode 7: Routing
+  - part 1: useEffect dependency param is optional. If not provided, useEffect is called on every render.
+            If empty array, called once, on first render
+  - part 2: router config/setup
+  - part 3: About & Contact route & Page. useRouteError hook
+  - part 4: Children routes. outlet react component. link for anchor tag redirection without page refresh
+            Hence single page. On re-routing the components are re-arraged. Or loads appropriate component
+          - Routing types -> (server & client) routing
+  - part 5: Dynamic routing (restaurant page with dishes)
