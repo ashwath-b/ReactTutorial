@@ -85,3 +85,14 @@ Episode 7: Routing
             Hence single page. On re-routing the components are re-arraged. Or loads appropriate component
           - Routing types -> (server & client) routing
   - part 5: Dynamic routing (restaurant page with dishes)
+  - part 6: Nested routing (restaurant page with dishes & reviews)
+    - Link component for every restaurant
+
+Episode 8: class based component (older way of creating components)
+  - extends React.component. super(props)
+  - props & state. use this.state
+  - update state variables: componentDidMount, called post component is mounted (post child component)
+  - function based components: Use return in useEffect to clear setTimeOut
+  - class based components: use componentDidUnmount to clear setTimeOut
+
+  PENDING IMPLEMENTATION
