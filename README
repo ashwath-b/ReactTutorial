@@ -113,3 +113,17 @@ Episode 10: Tailwing integration
     - frameworks (material UI, bootstrap, chakra ui, ant design etc)
     - tailwind
   - part 2: 
+
+Episode 11: Higher Order Components
+  - part 1: Accepts a component & returns a component (promoted restaurants)
+    - HOC are pure functions, i.e. not modifying any behaviour of the receiving component
+  - part 2: controlled & uncontrolled components. Lifting states up
+    - Restaurent page same as swiggy's with all categories & it's items
+    - on one expand collapse all others
+    - ReactDevTool extension
+    - controller & uncontrolled by parent component
+    - PENDING: Collapse all accordions
+  - part 3: context
+    - Accessing context in Class based component -> UserContext.Consumer
+    - Updating attribute value in context -> UserContext.Provider
+    - Nested level UserContext.Provider. Appropriate updated value will be used

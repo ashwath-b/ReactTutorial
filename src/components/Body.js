@@ -1,13 +1,15 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmers from "./Shimmers";
 import { APP_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [restaurantsArr, setRestaurantsArr] = useState([]);
   const [restaurants, setRestaurants] = useState([]);
   const [searchStr, setSearchStr] = useState("");
+  let { loggedInUser, setUserName } = useContext(UserContext)
 
   useEffect(() => {
     fetchData();
@@ -23,6 +25,8 @@ const Body = () => {
       console.log(err);
     }
   }
+
+  const RestaurantPromotedCard = withPromotedLabel(RestaurantCard);
 
   return (
     <div className="p-2 m-2 border border-solid border-[#f0f0f0] bg-orange-100">
@@ -50,11 +54,25 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        <div className="ml-4">
+          <input
+            type="text"
+            className="border border-black pl-2"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
       </div>
       {restaurants.length === 0 ? <Shimmers /> :
         <div className="flex flex-wrap">
           {restaurants.map((restaurant) => (
-            <Link key={restaurant?.info?.id} to={"restaurant/" + restaurant?.info?.id}><RestaurantCard key={restaurant.info.id} resData={restaurant}/></Link>
+            <Link key={restaurant?.info?.id} to={"restaurant/" + restaurant?.info?.id}>
+              {restaurant?.info?.avgRating > 4.3 ? (
+                <RestaurantPromotedCard resData={restaurant} />
+              ) : (
+                <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
+              )}
+            </Link>
           ))}
         </div>
       }
