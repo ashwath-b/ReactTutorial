@@ -94,5 +94,22 @@ Episode 8: class based component (older way of creating components)
   - update state variables: componentDidMount, called post component is mounted (post child component)
   - function based components: Use return in useEffect to clear setTimeOut
   - class based components: use componentDidUnmount to clear setTimeOut
+  - https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+  - why super(props) in class based componenets
+  - async useEffect
+  - PENDING IMPLEMENTATION (base)
 
-  PENDING IMPLEMENTATION
+Episode 9: Optimizing App
+  - part 1: custom hooks, refactoring
+  - part 3: custom hooks (API fetch, online/offline internet)
+  - part 5: app chunking/splitting/dynamic bundling/lazy loading/ -> lazy, Suspense
+  - PENDING IMPLEMENTATION (base)
+
+Episode 10: Tailwing integration
+  - part 1: Different ways of styling app
+    - direct css
+    - styled components
+    - sass & scss
+    - frameworks (material UI, bootstrap, chakra ui, ant design etc)
+    - tailwind
+  - part 2: 
