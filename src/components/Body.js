@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmers from "./Shimmers";
 import { APP_URL } from "../utils/constants";
 import { useState, useEffect } from "react";
@@ -24,8 +24,11 @@ const Body = () => {
     }
   }
 
+  const RestaurantPromotedCard = withPromotedLabel(RestaurantCard);
+
   return (
     <div className="p-2 m-2 border border-solid border-[#f0f0f0] bg-orange-100">
+      {console.log(restaurants)}
       <div className="flex items-center">
         <div className="p-4 m-4">
           <input
@@ -54,7 +57,13 @@ const Body = () => {
       {restaurants.length === 0 ? <Shimmers /> :
         <div className="flex flex-wrap">
           {restaurants.map((restaurant) => (
-            <Link key={restaurant?.info?.id} to={"restaurant/" + restaurant?.info?.id}><RestaurantCard key={restaurant.info.id} resData={restaurant}/></Link>
+            <Link key={restaurant?.info?.id} to={"restaurant/" + restaurant?.info?.id}>
+              {restaurant?.info?.avgRating > 4.3 ? (
+                <RestaurantPromotedCard resData={restaurant} />
+              ) : (
+                <RestaurantCard key={restaurant.info.id} resData={restaurant}/>
+              )}
+            </Link>
           ))}
         </div>
       }
