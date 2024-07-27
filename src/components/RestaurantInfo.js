@@ -26,8 +26,8 @@ const RestaurantInfo = () => {
   const items = restInfo[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards;
   console.log(items);
   return (
-    <div className="info">
-      <h1>{name}</h1>
+    <div className="p-4 m-4 border border-solid bg-gray-200">
+      <h1 className="font-bold text-lg">{name}</h1>
       <h3>{cuisines.join(", ")} - {costForTwoMessage}</h3>
       <h3>Rating: {avgRating} | ETA: #{sla.slaString}</h3>
       <ul>
