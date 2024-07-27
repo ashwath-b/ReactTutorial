@@ -2,14 +2,21 @@ import { useState } from "react";
 import ItemList from "./ItemList";
 
 const RestaurantCategory = (props) => {
-  const { category } = props;
+  const { category, showItems, setShowIndex } = props;
   const items = category?.itemCards;
-  const [showItems, setShowItems] = useState(false);
 
-  const handleClick = () => setShowItems(!showItems);
+  const handleClick = () => {
+    setShowIndex();
+  }
+
+  let classNames = "my-2 p-4 bg-gray-200 shadow-lg text-center flex justify-between cursor-pointer";
+
   return (
     <div className="w-6/12 mx-auto">
-      <div className="my-2 p-4 bg-gray-200 shadow-lg text-center flex justify-between cursor-pointer" onClick={handleClick}>
+      <div
+        className={classNames}
+        onClick={handleClick}
+      >
         <span className="font-bold">{category?.title} ({items.length})</span>
         <span>⬇️</span>
       </div>

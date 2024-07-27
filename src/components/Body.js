@@ -1,13 +1,15 @@
 import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import Shimmers from "./Shimmers";
 import { APP_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [restaurantsArr, setRestaurantsArr] = useState([]);
   const [restaurants, setRestaurants] = useState([]);
   const [searchStr, setSearchStr] = useState("");
+  let { loggedInUser, setUserName } = useContext(UserContext)
 
   useEffect(() => {
     fetchData();
@@ -28,7 +30,6 @@ const Body = () => {
 
   return (
     <div className="p-2 m-2 border border-solid border-[#f0f0f0] bg-orange-100">
-      {console.log(restaurants)}
       <div className="flex items-center">
         <div className="p-4 m-4">
           <input
@@ -53,6 +54,14 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        <div className="ml-4">
+          <input
+            type="text"
+            className="border border-black pl-2"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          />
+        </div>
       </div>
       {restaurants.length === 0 ? <Shimmers /> :
         <div className="flex flex-wrap">
