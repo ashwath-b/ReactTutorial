@@ -2,11 +2,15 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { LOGO_URL } from "../utils/constants";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
 
   const { loggedInUser } = useContext(UserContext);
+
+  const cartItems = useSelector((store) => store.cart.items);
+  // console.log(cartItems);
 
   return (
     <div className="p-2 m-2 flex justify-between border border-solid border-black bg-green-200">
@@ -24,7 +28,9 @@ const Header = () => {
           <li className="px-2">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="px-2">Address</li>
+          <li className="px-2">
+            <Link to="/cart">Cart - {cartItems.length} item(s)</Link>
+          </li>
           <li className="font-bold">UserName: {loggedInUser}</li>
           <button className="px-2"
             onClick={() => {

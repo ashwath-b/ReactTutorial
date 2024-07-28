@@ -127,3 +127,42 @@ Episode 11: Higher Order Components
     - Accessing context in Class based component -> UserContext.Consumer
     - Updating attribute value in context -> UserContext.Provider
     - Nested level UserContext.Provider. Appropriate updated value will be used
+
+Episode 12: Redux
+  - part 1: Redux setup (zustand alternate)
+  - part 2: Redux Tool Kit (RTK), older version (Vanilla Redux)
+    - Vanilla Redux: Was hard to configure & Big Learning Curve
+    - RTK: Simpler & Just has BoilerPlate
+    - RTK with ReactRedux
+  - part 3:
+    - Redux store is divided into slices (card, user, etc slices)
+    - Each slice stores data related to it
+    - Write: dispatch an action on action (ex: On click)
+      - action calls reducer function & reducer function modifies the redux store (slice)
+    - Read: Selector will provide the data. i.e. cart component Subscribes to selector
+      - Hence when data changes in Slice, selector updates the data in it's subscribers
+  - part 4: implementation
+    - install redux
+    - build store
+    - connect store to app
+    - create slice (cart slice)
+    - dispatch action
+    - selector (subscribe)
+  - part 5: Always subscribe to right state (cart items in this case)
+  - part 6: reducer in main Store, reducers for function definitions, reducer while exporting from slice
+  - part 7:
+    - Vanilla Redux -> Do not mutate states
+      - Vanilla Redux: Instead create a new copy of state, update & return
+      - return new state was mandatory
+      - Used thungs & middleware to make API calls
+    - RTK: Mutate the state (MUST)
+      - RTK does the what develop used to do in vanilla redux
+      - Immer does the above in RTK
+      - return not mandatory
+      - logging in RTK, use current func from redux
+      - reducers must either mutate or return the new state
+      - Uses RTK query (instead of thungs & middleware)
+    - part 8: Redux dev tools (chrome extension)
+      - explore RTK query
+
+Episode 13: 
