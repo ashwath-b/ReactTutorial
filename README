@@ -165,4 +165,19 @@ Episode 12: Redux
     - part 8: Redux dev tools (chrome extension)
       - explore RTK query
 
-Episode 13: 
+Episode 13: Types of dev testing
+  - part 1: types -> unit, integration, end-to-end testing
+  - part 2: setup
+    - React Testing Library uses jest behind the scenes
+    - install RTL, jest, babel dependencies, add babel config, resolve babel conflict parcel & jest
+      - https://parceljs.org/languages/javascript/#usage-with-other-tools
+      - disbale default parcel's babel transpilation
+  - part 3: jest config file & it's setup
+    - install jest-environment-jsdom (for jest above 28)
+    - add preset config in babel for @babel/preset-react
+    - npm install both @babel/preset-react & @testing-library/jest-dom
+  - part 4: Grouping -> describe
+    - describe, test/it
+  - part 8: Integration testing
+    - wrap render() within act() when test includes fetch or setState functions
+  - part 9: beforeAll, beforeEach, afterAll, afterEach

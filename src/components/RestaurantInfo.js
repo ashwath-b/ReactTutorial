@@ -22,7 +22,7 @@ const RestaurantInfo = () => {
   if (restInfo === null) {
     return <Shimmers />
   }
-
+  // console.log(restInfo.length);
   const { name, costForTwoMessage, cuisines, avgRating, sla } = restInfo[2]?.card?.card?.info;
   const items = restInfo[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards;
   const categories = restInfo[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => (

@@ -26,6 +26,12 @@ const Body = () => {
     }
   }
 
+  const handleSearch = () => {
+    let text = searchStr.toLowerCase();
+    let filteredList = text === "" ? restaurantsArr : restaurantsArr.filter(res => res.info.name.toLowerCase().includes(searchStr.toLowerCase()))
+    setRestaurants(filteredList);
+  }
+
   const RestaurantPromotedCard = withPromotedLabel(RestaurantCard);
 
   return (
@@ -35,20 +41,24 @@ const Body = () => {
           <input
             type="text"
             placeholder="Search for restaurants"
-            className="border border-solid border-black rounded-md"
+            name="search"
+            className="px-1 border border-solid border-black rounded-md"
             value={searchStr}
             onChange={(e) => {
               setSearchStr(e.target.value);
-              text = searchStr.toLowerCase();
-              filteredList = text === "" ? restaurantsArr : restaurantsArr.filter(res => res.info.name.toLowerCase().includes(searchStr.toLowerCase()))
-              setRestaurants(filteredList);
             }}
           />
+          <button
+            className="px-2 m-4 bg-gray-400 rounded-lg"
+            onClick={handleSearch}
+          >
+            search
+          </button>
         </div>
         <button
           className="px-2 h-6 bg-blue-300 rounded-2xl"
           onClick={() => {
-            filteredList = restaurantsArr.filter(res => (res.info.avgRating > 4.3))
+            let filteredList = restaurantsArr.filter(res => (res.info.avgRating > 4.3))
             setRestaurants(filteredList);
           }}
         >
